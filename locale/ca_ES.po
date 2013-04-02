@@ -1,0 +1,31 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "error:account.account:"
+msgid ""
+"Party Required cannot be set on account \"%s\" because some of its moves "
+"have no party set."
+msgstr ""
+"No es pot assignar en el compte \"%s\" un tercer perque un dels moviments no"
+" té cap tercer encara."
+
+msgctxt "field:account.account,party_required:"
+msgid "Party Required"
+msgstr "Tercer requerit"
+
+msgctxt "field:account.account.template,party_required:"
+msgid "Party Required"
+msgstr "Tercer requerit"
+
+msgctxt "field:account.move.line,party_required:"
+msgid "Party Required"
+msgstr "Tercer requerit"
+
+msgctxt "help:account.account,party_required:"
+msgid "If set, it will ensure all move lines have a party."
+msgstr "Si s'estableix, cal que totes les línies disposin d'un tercer."
+
+msgctxt "help:account.account.template,party_required:"
+msgid "If set, it will ensure all move lines have a party."
+msgstr "Si s'estableix, cal que totes les línies disposin d'un tercer."
