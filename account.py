@@ -13,10 +13,10 @@ class AccountTemplate(ModelSQL, ModelView):
     party_required = fields.Boolean('Party Required', help='If set, it will '
         'ensure all move lines have a party.')
 
-    def _get_account_value(self, template, account=None):
-        res = super(AccountTemplate, self)._get_account_value(template, account)
-        if not account or account.party_required != template.party_required:
-            res['party_required'] = template.party_required
+    def _get_account_value(self, account=None):
+        res = super(AccountTemplate, self)._get_account_value(account)
+        if not account or account.party_required != self.party_required:
+            res['party_required'] = self.party_required
         return res
 
 
