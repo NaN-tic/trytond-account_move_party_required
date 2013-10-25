@@ -2,3 +2,5 @@
 #this repository contains the full copyright notices and license terms.
 
 from .test_account_search_with_dot_ import suite
+
+__all__ = ['suite']
