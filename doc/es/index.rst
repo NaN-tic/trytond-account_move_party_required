@@ -1,6 +1,6 @@
-======================================
-Apuntes contables requerido el tercero
-======================================
+========================================
+Tercero obligatorio en apuntes contables
+========================================
 
-Añade un nuevo campo en los apuntes contables que si se selecciona, se obliga que
-todas las líneas del apunte deben de contener un tercero (campo requerido).
+Añade un campo en las cuentas contables que si se marca, se obliga a que
+todos los apuntes contables de esa cuenta tengan un tercero (campo requerido).
