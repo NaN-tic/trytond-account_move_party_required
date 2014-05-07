@@ -1,5 +1,5 @@
 #This file is part account_move_party_required module for Tryton.
-#The COPYRIGHT file at the top level of this repository contains 
+#The COPYRIGHT file at the top level of this repository contains
 #the full copyright notices and license terms.
 from trytond.model import ModelView, ModelSQL, fields
 from trytond.pool import Pool
@@ -53,7 +53,9 @@ class Line(ModelSQL, ModelView):
             on_change_with=['account']), 'on_change_with_party_required')
 
     def on_change_with_party_required(self, name=None):
-        return self.account.party_required
+        if self.account:
+            return self.account.party_required
+        return False
 
     @classmethod
     def __setup__(cls):
