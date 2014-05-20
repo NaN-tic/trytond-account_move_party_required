@@ -34,17 +34,19 @@ class Account(ModelSQL, ModelView):
                 })
 
     @classmethod
-    def write(cls, accounts, vals):
+    def write(cls, *args):
         Line = Pool().get('account.move.line')
-        if vals.get('party_required'):
-            moves = Line.search([
-                    ('account', 'in', [x.id for x in accounts]),
-                    ('party', '=', None),
-                    ], limit=1)
-            if moves:
-                cls.raise_user_error('party_required', (
-                        moves[0].account.rec_name,))
-        return super(Account, cls).write(accounts, vals)
+        actions = iter(args)
+        for accounts, values in zip(actions, actions):
+            if values.get('party_required'):
+                moves = Line.search([
+                        ('account', 'in', [x.id for x in accounts]),
+                        ('party', '=', None),
+                        ], limit=1)
+                if moves:
+                    cls.raise_user_error('party_required', (
+                            moves[0].account.rec_name,))
+        return super(Account, cls).write(*args)
 
 
 class Line(ModelSQL, ModelView):
