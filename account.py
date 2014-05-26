@@ -51,9 +51,10 @@ class Account(ModelSQL, ModelView):
 
 class Line(ModelSQL, ModelView):
     __name__ = 'account.move.line'
-    party_required = fields.Function(fields.Boolean('Party Required',
-            on_change_with=['account']), 'on_change_with_party_required')
+    party_required = fields.Function(fields.Boolean('Party Required'),
+        'on_change_with_party_required')
 
+    @fields.depends('account')
     def on_change_with_party_required(self, name=None):
         if self.account:
             return self.account.party_required
