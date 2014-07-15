@@ -3,6 +3,7 @@
 #the full copyright notices and license terms.
 from trytond.pool import Pool
 from .account import *
+from .move import *
 
 
 def register():
@@ -10,4 +11,5 @@ def register():
         AccountTemplate,
         Account,
         Line,
+        Move,
         module='account_move_party_required', type_='model')
