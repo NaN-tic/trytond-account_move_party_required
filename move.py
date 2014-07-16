@@ -17,9 +17,9 @@ class Move:
         Account = pool.get('account.account')
         MoveLine = pool.get('account.move.line')
         context = Transaction().context
-        if context['active_model'] == 'account.move.line':
+        if context.get('active_model') == 'account.move.line':
             party = None
-            for active_id in context['active_ids']:
+            for active_id in context.get('active_ids', []):
                 move_line = MoveLine(active_id)
                 if getattr(move_line, 'party'):
                     party = move_line.party
